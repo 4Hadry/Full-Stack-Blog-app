@@ -8,9 +8,12 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postRouter = require("./routes/postsRouter");
 const { connect } = require("mongoose");
+// const { notFound, errorHandler } = require("./Middleware/errorMiddleware");
 require("dotenv").config();
 var app = express();
 
+// app.use(notFound);
+// app.use(errorHandler);
 // database
 connect(process.env.MONGO)
   .then(async () => {
